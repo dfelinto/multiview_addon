@@ -48,7 +48,7 @@ Mathematics
 
 For those who are interested in off-axis calculation and how to build the [stereo comfort zone](http://www.noeol.de/s3d/near-far-plane.png)], here are some formulas.
 
-1. Calculating off-axis shift (delta) in pixel:
+1) Calculating off-axis shift (delta) in pixel:
 
 ![](http://www.noeol.de/s3d/delta_form.png)
 
@@ -57,7 +57,7 @@ w = render width in pixel
 f0 = focal distance to zero parallax (stereo window)
 FoV = horiz. Field of View (camera angle)
 
-2. Calculating [max. disparity](http://www.noeol.de/s3d/sleep.png) (disp) in pixel at near- and far-plane (simple sine rule):
+2) Calculating [max. disparity](http://www.noeol.de/s3d/sleep.png) (disp) in pixel at near- and far-plane (simple sine rule):
 
 ![](http://www.noeol.de/s3d/disp_form.png)
 
@@ -65,7 +65,7 @@ theta = max. parallax angle, given by the user (default 1.0°)
 vdist = distance between viewer and projection screen
 ppi = Pixel Per Inch of the projection screen
 
-3. Calculating distance (pdist) to near- and far-plane to get the [stereo comfort zone](http://www.noeol.de/s3d/near-far-plane.png):
+3) Calculating distance (pdist) to near- and far-plane to get the [stereo comfort zone](http://www.noeol.de/s3d/near-far-plane.png):
 
 ![](http://www.noeol.de/s3d/pdist_form.png)
 
@@ -74,7 +74,7 @@ delta = off-axis shift of the first formular in pixel
 disp = max. disparity at near- and far-plane (2nd formular) in pixel (disp is for Nearplane '+' and for Farplane '-')
 FoV = horiz. Field of View (camera angle)
 
-4. Calculating the 'Toe-In' angle in degree for the converge camera rig:
+4) Calculating the 'Toe-In' angle in degree for the converge camera rig:
 
 ![](http://www.noeol.de/s3d/toein_form.png)
 
