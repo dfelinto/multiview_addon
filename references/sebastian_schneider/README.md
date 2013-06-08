@@ -1,11 +1,11 @@
 Stereoscopic Rendering in Blender 2.6
 =================
-addon version 1.6.7, by Sebastian Schneider
+Addon version 1.6.7, by Sebastian Schneider.
 
 Manual copied from (http://www.noeol.de/s3d/)
 
-Manual
-======
+Introduction
+============
 How to implement an off-axis camera to produce correct stereo pairs via Python Add-on in Blender
 
 Since there is no stereoscopic camera in Blender, I decided to write a python script to implement an 'Off-Axis' stereo camera. This script sets the 'Stereo Window' or zero parallax in Blender and not via postproduction. It creates a parallel off-axis camera rig, the best way to produce stereo pairs without [vertical parallax](http://www.noeol.de/s3d/vertical_parallax.html). You can use Blenders Node Editor to control the left and right camera render results and combine them to a Side-by-Side, Interlaced or Anaglyph image.
@@ -13,36 +13,40 @@ Since there is no stereoscopic camera in Blender, I decided to write a python sc
 ![](http://www.noeol.de/s3d/gui.png)
 ![](http://www.noeol.de/s3d/frustum.png)
 
-*Download*
+Latest Info
+========
 
 Last updates:
-1. Interlaced (Left Field First) output as new node preset for the compositor
-2. Selecting the right camera view for each Render-Layer in the compositor is not necessary anymore
-3. Adding objects in the main scene needs no manual linking to the left- and right-scene anymore
 
-*Videos*
+ 1. Interlaced (Left Field First) output as new node preset for the compositor
+ 2. Selecting the right camera view for each Render-Layer in the compositor is not necessary anymore
+ 3. Adding objects in the main scene needs no manual linking to the left- and right-scene anymore
+
+Videos
+======
 * [Video tutorial](http://www.youtube.com/watch?v=HFhKxocDqnA) (youtube.com)
-
 * [How to render a stereo Side-by-Side animation](http://www.youtube.com/watch?v=usWXat4pt1M) (youtube.com)
 
-*Camera Types*
+Camera Types
+============
 
 The Add-on provides all three stereoscopic camera types. The 'Off-Axis' rig is set as default, because of its best results. The 'Converge' (or Toe-In) Camera rig is only useful if you have to match 'real-stereo-camera' material due to its tendency to produce [vertical parallax](http://www.noeol.de/s3d/vertical_parallax.html). The 'Parallel' Camera produces always negative parallax, which means that all objects appearing later in front of the screen and you have to set the zero parallax manually. Recommendation: If you want to do some good and easy to fuse stereo pairs, use the default Off-Axis Camera rig only.
 
-![](http://www.noeol.de/s3d/offaxis_rig.png)
-![](http://www.noeol.de/s3d/toein_rig.png)
+![](http://www.noeol.de/s3d/offaxis_rig.png) 
+![](http://www.noeol.de/s3d/toein_rig.png) 
 ![](http://www.noeol.de/s3d/parallel_rig.png)
 
 Note: to re-calculate the shift of the Off-Axis Camera, click the 'Set Stereo Camera' button
-1. if you change the render resolution
-2. if you change the camera angle
-3. if you change any stereo parameter
+ 1. if you change the render resolution
+ 2. if you change the camera angle
+ 3. if you change any stereo parameter
 
 (if the output is a Side-by-Side: delete the nodes and click 'Add-Nodes' again to get the new size too)
 
-*Mathematics*
+Mathematics
+===========
 
-For those who are interested in off-axis calculation and how to build the [stereo comfort zone(http://www.noeol.de/s3d/near-far-plane.png)], here are some formulas.
+For those who are interested in off-axis calculation and how to build the [stereo comfort zone](http://www.noeol.de/s3d/near-far-plane.png)], here are some formulas.
 
 1. Calculating off-axis shift (delta) in pixel:
 
@@ -62,6 +66,7 @@ vdist = distance between viewer and projection screen
 ppi = Pixel Per Inch of the projection screen
 
 3. Calculating distance (pdist) to near- and far-plane to get the [stereo comfort zone](http://www.noeol.de/s3d/near-far-plane.png):
+
 ![](http://www.noeol.de/s3d/pdist_form.png)
 
 b = stereo base (horiz. separation of left and right camera)
