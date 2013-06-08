@@ -1,9 +1,17 @@
-Quick and dirty manual:
+Manual
+=======
 
-Select your camera, Alt-Shift-T -> Create Stereo Setup and tadaaaaa… done.
+Blender Stereoscopy addon by Bartek Skorupa.
+Addon developed for Blender 2.64.
 
-Camera that you selected becomes the left camera (' L' suffix will appear in its name if not added earlier)
-Second camera will be your right camera.
+Setup
+======
+
+Select your camera, Alt-Shift-T -> Create Stereo Setup.
+
+The camera that you selected becomes the left camera (' L' suffix will appear in its name if not added earlier)
+The second camera will be your right camera.
+
 After the script has done its magic - the right camera is selected.
 
 In its object buttons you'll find custom properties to set the proper stereo base:
@@ -13,10 +21,11 @@ In its object buttons you'll find custom properties to set the proper stereo bas
 "FP/NP Minimum" - it's by default set to 2. This means that Far Point must be at least 2x as far as the near point. It's to prevent too big stereo base on really shallow scenes.
 
 
-USAGE:
-Grab the near plane and position it at the nearest point in scene, position Far Plane at the furthest object and you're done. Right camera position will be set accordingly and dynamically which is crusial.
+USAGE
+=====
+Grab the near plane and position it at the nearest point in scene, position Far Plane at the furthest object and you're done. Right camera position will be set accordingly and dynamically which is crucial.
 
-I have added another thing: There is a driver that drives camera shift of right camera, It's been set such that the shift will position the depth bracket so the near plane will be exactly on the screen.
+There is a driver that drives camera shift of right camera, It's been set such that the shift will position the depth bracket so the near plane will be exactly on the screen.
 Then in post production you simply have different starting point. If you don't shift right image more or less, you'll simply have all behind the screen.
 
 If you don't want this behavior - simply remove driver from "shift x" property from right camera's data.
@@ -28,6 +37,3 @@ If you want to change the base - you'll have to re-render both left and right ca
 
 In this setup if you want to change something - you don't touch the left camera, but only the right one, so you'll have to re-render only right eye.
 It's helpful especially when you want to use multiple rigs.
-
---
-by Bartek Skorupa
