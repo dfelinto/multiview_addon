@@ -1,6 +1,6 @@
 Stereoscopic Rendering in Blender 2.6
 =================
-Addon version 1.6.7, by Sebastian Schneider.
+Addon version 1.6.8, by Sebastian Schneider.
 
 Manual copied from (http://www.noeol.de/s3d/)
 
